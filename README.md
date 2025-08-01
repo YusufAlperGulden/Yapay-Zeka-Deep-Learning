@@ -42,3 +42,4 @@ model.compile(optimizer = "adam" , loss = "mse") -Adam optimizer: adapts learnin
 model.fit(x, y, epochs=128, batch_size=16) -epochs=128: full passes through your dataset. batch_size=16: number of samples processed before the model updates weights.
 
 
+model.predict(np.array([[5, 1, 0.5, 4, 4.2,]])) - Creates a 2D NumPy array of shape (1, 5), matching the five input features your model expects. Feeds that single-sample array through the network and returns a NumPy array of predictions with shape (1, 1).
