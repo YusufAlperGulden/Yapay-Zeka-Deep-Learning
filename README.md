@@ -39,4 +39,6 @@ model.add(Dense(1)) -The final layer outputs a single continuous value. It also 
 model.compile(optimizer = "adam" , loss = "mse") -Adam optimizer: adapts learning rates per parameter using estimates of first and second moments (momentum + RMSProp).
 -MSE loss: measures average squared difference between predictions and targets—standard for regression.
 
-model.fit(x, y, epochs=128, batch_size=16)
+model.fit(x, y, epochs=128, batch_size=16) -epochs=128: full passes through your dataset. batch_size=16: number of samples processed before the model updates weights.
+
+
