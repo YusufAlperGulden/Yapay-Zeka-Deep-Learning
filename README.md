@@ -9,4 +9,22 @@ Then, we Identify the CSV file and load it with pandas (pd): df = pd.read_csv(''
 
 After that, we use "df.head()" to see the first 5 rows of the DataFrame(df). This lets you verify that your data loaded correctly and inspect its structure at a glance.
 
-Finally, we can start with deep learning. y = df['Scores']
+Finally, we can start with deep learning. y = df['Scores'] y is being assigned the contents of "Scores" column. y is the target variable(what you’re trying to predict)
+Moving your target column (y) into its own variable is a common step in supervised learning. y will serve as the ground truth for model training and evaluation.
+Keeping features (X) and target (y) separate makes it easy to split data into training and test sets.
+
+
+Next, x = df.drop(columns = ['Scores','Grade']) we create a new DataFrame x by dropping the columns Scores and Grade from your original DataFrame (df). You end up with only the predictor variables (features) in x, leaving out the target (Scores) and any other non-features (Grade). X now holds DataFrame without 'Scores' and 'Grade', making it your feature set.
+
+y = y.values.astype('float32') transforms your pandas Series y into a raw NumPy array of type float32. Keras (and many other deep-learning frameworks) expects its inputs and targets to be in contiguous NumPy arrays with a specific numeric dtype for optimal performance. Deep-learning libraries like TensorFlow default to 32-bit floats for a balance of precision and speed.
+
+
+Deep-learning libraries like TensorFlow default to 32-bit floats for a balance of precision and speed.
+
+x = x.values.astype('float32') "X.values()" extracts the raw NumPy array from the DataFrame. This gives you a plain array of shape (n_samples, n_features)
+
+from keras.models import Sequential (Imports the Sequential class, which lets you stack layers one after another in a linear graph.)
+from keras.layers import Dense   (Brings in the Dense layer type—every neuron in one layer is connected to every neuron in the next)
+model = Sequential()             (Lastly, create a brand-new empty model instance ready to have layers added.)
+
+
