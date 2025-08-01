@@ -27,4 +27,16 @@ from keras.models import Sequential (Imports the Sequential class, which lets yo
 from keras.layers import Dense   (Brings in the Dense layer type—every neuron in one layer is connected to every neuron in the next)
 model = Sequential()             (Lastly, create a brand-new empty model instance ready to have layers added.)
 
+model.add(Dense(16)) -This first dense layer has 16 neurons and uses a linear activation. It performs a weighted sum of inputs plus a bias term.
 
+model.add(Dense(32 , activation = "relu"))
+model.add(Dense(32 , activation = "relu")) -These two layers each have 32 neurons with ReLU activation, introducing non-linearity and helping the network learn complex relationships.
+
+model.add(Dense(1)) -The final layer outputs a single continuous value. It also defaults to a linear activation.
+
+
+
+model.compile(optimizer = "adam" , loss = "mse") -Adam optimizer: adapts learning rates per parameter using estimates of first and second moments (momentum + RMSProp).
+-MSE loss: measures average squared difference between predictions and targets—standard for regression.
+
+model.fit(x, y, epochs=128, batch_size=16)
