@@ -1,6 +1,8 @@
 # Yapay-Zeka-Deep-Learning
 Yapay Zeka -  Deep learning using Keras, Tensorflow
 
+(students-grade-prediction-with-keras-sequential-m.ipynb)
+
 First, we start by importing "os","numpy" and "pandas".
 
 Secondly, we use for loop to traverse every file under the /kaggle/input folder and prints its full path. It’s a quick way to discover what data files (CSVs, images, JSONs, etc.) are available in Kaggle environment. 
