@@ -1,6 +1,8 @@
 # Yapay-Zeka-Deep-Learning
 Yapay Zeka -  Deep learning using Keras, Tensorflow
 
+-----------------------------------------------------------
+
 (students-grade-prediction-with-keras-sequential-m.ipynb)
 
 First, we start by importing "os","numpy" and "pandas".
@@ -45,3 +47,9 @@ model.fit(x, y, epochs=128, batch_size=16) -epochs=128: full passes through your
 
 
 model.predict(np.array([[5, 1, 0.5, 4, 4.2,]])) - Creates a 2D NumPy array of shape (1, 5), matching the five input features your model expects. Feeds that single-sample array through the network and returns a NumPy array of predictions with shape (1, 1).
+
+
+------------------------------------------------------------------------
+
+
+anemia-type-classification-keras-sequential-model (2).ipynb
