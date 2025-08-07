@@ -193,7 +193,11 @@ validation_split=0.24	**24% of the training data is set aside for validation to 
 # Neural_Network_For_Handwritten_Digits_Classification_|_Deep_Learning
 
 
-
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
 
 
 
