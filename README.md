@@ -341,7 +341,88 @@ plt.matshow(x_test[4]) **visualizing the fifth image in the MNIST test set.**
 
 y_predicted=model.predict(x_test_flatten)
 
+y_predicted[1]
+
+We are accessing the predicted probabilities for the second image in the MNIST test set. Since the model is a single-layer neural network with **10** output neurons and a sigmoid activation, the output will be a 10-element array like: 
+
+>array([4.5768741e-01, 5.1475060e-03, 9.9949604e-01, 4.0100217e-01,
+       5.9653027e-10, 7.4501091e-01, 8.9263618e-01, 1.6786180e-12,
+       1.3312872e-01, 2.1322808e-09], dtype=float32)
+
 ------------------------------------------------
+
+python_int = int(np.argmax(y_predicted[1])) **Converts the model’s prediction for the second test image into a clean Python integer and prints it.**
+
+
+
+
+np.argmax(y_predicted[1]): **Finds the index of the highest probability (the predicted digit)**
+
+
+
+print(python_int) **Displays the result**
+
+
+>2
+
+
+
+
+
+
+
+------------------------------------
+
+
+y_test[:5] **Show the labels for the first 5 images in the "test" set.**
+
+
+>array([7, 2, 1, 0, 4], dtype=uint8)
+
+------------------------------
+
+
+y_predicted_labels=[np.argmax(i) for i in y_predicted]
+
+y_predicted_labels[:5] **Extracts the predicted digit labels from your model’s output and shows the first five predictions.**
+
+
+>[np.int64(7), np.int64(2), np.int64(1), np.int64(0), np.int64(4)]
+
+
+
+y_test[:5] 
+
+>array([7, 2, 1, 0, 4], dtype=uint8)
+
+
+     
+-----------------------------------------------------
+
+
+cm=tf.math.confusion_matrix(labels=y_test,predictions=y_predicted_labels) 📊 **Creates a confusion matrix using TensorFlow to evaluate how well your model predicted each digit.**
+
+
+**Rows = actual labels (y_test)**
+
+**Columns = predicted labels (y_predicted_labels)**
+
+**Each cell [i][j] = number of times class i was predicted as class j**
+
+
+---------------------------------------
+
+
+import seaborn as sn
+plt.figure(figsize=(10,7))
+sn.heatmap(cm,annot=True,fmt='d')
+plt.xlabel('Predicted')
+plt.ylabel('Truth')
+
+
+
+
+
 
 # YUSUF ALPER GÜLDEN 07.08.2025
 
