@@ -174,10 +174,27 @@ What metric to report **(accuracy)**
 
 model.fit(x_train,y_train,epochs=128,batch_size=32,validation_split=0.24)  **.fit() is training Keras model on the anemia dataset.**
 
-model.fit()**This method trains your neural network using the training data (x_train, y_train). It adjusts the model’s weights to minimize the loss function you defined earlier.**
+model.fit() **This method trains your neural network using the training data (x_train, y_train). It adjusts the model’s weights to minimize the loss function you defined earlier.**
+
+x_train	**Input features — the data your model learns from.**
+
+y_train	**Target labels — the correct answers for each input.**
+
+epochs=128	**The model will go through the entire training set 128 times.** A high number, useful if your model needs more time to converge. But watch out for overfitting.
+
+batch_size=32	**The data is split into batches of 32 samples. The model updates weights after each batch.** 32 is a common default — balances speed and stability.
+
+validation_split=0.24	**24% of the training data is set aside for validation to monitor performance on unseen data during training.** This helps you track how well the model generalizes without needing a separate test set.
+
+------------------------------------------------------------------------
 
 
---------------------------------------------------------------------
+
+
+
+
+
+
 
 
 
