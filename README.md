@@ -207,6 +207,27 @@ import matplotlib.pyplot as plt
 
 
 
+(x_train,y_train),(x_test,y_test)=keras.datasets.mnist.load_data() Loads the MNIST dataset for deep learning.
+
+**What Is MNIST?**
+
+-A dataset of 70,000 grayscale images of handwritten digits (0–9) Each image is 28×28 pixels.
+
+
+x_train, y_train: 60,000 training samples.
+
+
+x_test, y_test: 10,000 test samples.
+
+
+keras.datasets.mnist.load_data(): **Loads the dataset directly from Keras.**
+
+(x_train, y_train), (x_test, y_test): **Unpacks the training and test sets.**
+
+
+>x_train.shape  ->(60000, 28, 28)
+>
+>y_train.shape  ->(60000,)
 
 
 
