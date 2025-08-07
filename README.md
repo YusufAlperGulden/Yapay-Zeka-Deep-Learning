@@ -138,12 +138,46 @@ model.add(Dense(64,activation='relu',input_dim=len(x.columns))) **Adding the fir
 
 **This first layer will learn patterns from the data to help distinguish between anemia types.**
 
-model.add(Dense(32, activation='relu')) 
+model.add(Dense(32, activation='relu'))  **Adds a hidden layer with 32 neurons and ReLU activation.**
+
+model.add(Dense(32, activation='relu')) **This layer learns intermediate features from the previous layer.**
+
+model.add(Dense(9, activation='softmax')) **Output layer with 9 neurons (for 9 anemia types).**
+
+
+**'softmax' activation converts outputs into probabilities summing to 1.**
+
+
+model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy']) -Prepares your Keras model for training by specifying how it should learn and evaluate performance.
+
+>optimizer='adam': Uses the Adam optimizer — fast, adaptive, and great for most tasks.
+>
+>loss='categorical_crossentropy': Ideal for multi-class classification when your labels are one-hot encoded.
+>
+>metrics=['accuracy']: Tracks accuracy during training and evaluation.
 
 
 
+model.compile() step tells Keras:
+
+How to adjust weights **(optimizer)**
+
+What error to minimize **(loss)**
+
+What metric to report **(accuracy)**
+
+**Specifies the loss function for multi-class classification when your labels are one-hot encoded.**
+
+**Adam optimizer adapts learning rates during training for faster convergence. It’s a great default choice.**
 
 
+
+model.fit(x_train,y_train,epochs=128,batch_size=32,validation_split=0.24)  **.fit() is training Keras model on the anemia dataset.**
+
+model.fit()**This method trains your neural network using the training data (x_train, y_train). It adjusts the model’s weights to minimize the loss function you defined earlier.**
+
+
+--------------------------------------------------------------------
 
 
 
