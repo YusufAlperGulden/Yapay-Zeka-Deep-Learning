@@ -194,10 +194,16 @@ validation_split=0.24	**24% of the training data is set aside for validation to 
 
 
 import tensorflow as tf
+
 from tensorflow import keras
+
 import numpy as np
+
 import matplotlib.pyplot as plt
+
 %matplotlib inline
+
+
 
 
 
