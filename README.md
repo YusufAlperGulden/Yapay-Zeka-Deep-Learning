@@ -413,16 +413,27 @@ cm=tf.math.confusion_matrix(labels=y_test,predictions=y_predicted_labels) 📊 *
 ---------------------------------------
 
 
-import seaborn as sn
-plt.figure(figsize=(10,7))
-sn.heatmap(cm,annot=True,fmt='d')
-plt.xlabel('Predicted')
-plt.ylabel('Truth')
+# Heatmap Code Explained:
+
+import seaborn as sn **Loads the Seaborn library under the alias (sn), giving you access to its statistical plotting API.**
+
+plt.figure(figsize=(10,7)) **Creates a new Matplotlib figure with a width of 10 inches and a height of 7 inches.**
+
+sn.heatmap(cm,annot=True,fmt='d') **Draws the confusion matrix cm as a color-coded grid<br>annotates each cell with integer values.**
+
+plt.xlabel('Predicted') **Sets the label of the x-axis to “Predicted,” showing which column corresponds to model outputs.**
+
+plt.ylabel('Truth') **Sets the label of the y-axis to “Truth,” indicating which row corresponds to the true labels.**
+
+***This sequence will render your confusion matrix as a heatmap, letting you quickly spot where the model excels or confuses one digit for another.***
 
 
 
 
 
+
+
+-----------------------------------------
 
 # YUSUF ALPER GÜLDEN 07.08.2025
 
