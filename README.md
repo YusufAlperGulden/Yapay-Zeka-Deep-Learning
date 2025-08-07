@@ -265,9 +265,9 @@ x_train.shape **60000 images that has 28x28 pixels size.**
 (60000, 28, 28)
 
 
--------------------------------
+--------------------------------
 
-#YUSUF ALPER GÜLDEN 07.08.2025
+# YUSUF ALPER GÜLDEN 07.08.2025
 
 
      
