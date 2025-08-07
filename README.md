@@ -52,7 +52,7 @@ model.predict(np.array([[5, 1, 0.5, 4, 4.2,]])) - Creates a 2D NumPy array of sh
 ------------------------------------------------------------------------
 
 
-anemia-type-classification-keras-sequential-model (2).ipynb
+# anemia-type-classification-keras-sequential-model (2).ipynb
 
 df = pd.read_csv('/kaggle/input/anemia-types-classification/diagnosed_cbc_data_v4.csv') - We read the CSV file and turn it into a DataFrame (df).
 
@@ -72,6 +72,31 @@ from sklearn.preprocessing import LabelEncoder **LabelEncoder is used to convert
 >Machine learning models (especially neural networks) require numerical inputs. So if your target variable y contains string labels, you need to encode them using LabelEncoder.
 
 
+le=LabelEncoder() **Creates an instance of the LabelEncoder class.**
+
+y=le.fit_transform(y) **Learns the unique categories in y and converts those categories into numbers.**
+
+le.inverse_transform([4]) **Reverse label encoding — converts numeric label back to its original categorical form.**
+
+
+from tensorflow.keras.utils import to_categorical
+
+**Imports the to_categorical function from Keras, which is used to convert integer labels into one-hot encoded vectors.**
+
+y=to_categorical(y) -Convert your target labels y into one-hot encoded format, which is essential for multi-class classification tasks using neural network.
+
+**After using LabelEncoder, your target labels (y_encoded) are integers like 0, 1, 2. But neural networks often perform better when targets are in one-hot format. That's why it is important to turn it into the one-hot format. y_categorical is can be fed into a Keras model with "categorical_crossentropy" loss.**
+
+
+-If you did everything right, the output of y[0] should be looking like this:
+
+
+>array([0., 0., 0., 0., 0., 1., 0., 0., 0.])
+
+
+from sklearn.model_selection import train_test_split
+
+x_train,x_test,y_train,y_test=train_test_split(x,y,train_size=0.75,random_state=43)
 
 
 
