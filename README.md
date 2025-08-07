@@ -53,3 +53,26 @@ model.predict(np.array([[5, 1, 0.5, 4, 4.2,]])) - Creates a 2D NumPy array of sh
 
 
 anemia-type-classification-keras-sequential-model (2).ipynb
+
+df = pd.read_csv('/kaggle/input/anemia-types-classification/diagnosed_cbc_data_v4.csv') - We read the CSV file and turn it into a DataFrame (df).
+
+
+y=df['Diagnosis'] Accesses the column named "Diagnosis" from the DataFrame (df). This column likely contains the anemia type labels (e.g., Iron Deficiency Anemia etc.).
+
+Assigns this column to the variable y, which is typically used as the target in machine learning tasks. y contains the labels (anemia types)
+
+
+x=df.drop('Diagnosis',axis=1) Removes the "Diagnosis" column from the DataFrame (df). axis=1 means you're dropping a column (not a row).
+
+Assigns the remaining columns to the variable x, which will be used as the input features.
+
+
+from sklearn.preprocessing import LabelEncoder **LabelEncoder is used to convert categorical labels (like strings) into numeric values.**
+
+>Machine learning models (especially neural networks) require numerical inputs. So if your target variable y contains string labels, you need to encode them using LabelEncoder.
+
+
+
+
+
+
