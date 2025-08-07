@@ -231,4 +231,39 @@ keras.datasets.mnist.load_data(): **Loads the dataset directly from Keras.**
 
 
 
+x_train[0].shape **Checking the shape of the first image in the MNIST training set.**
 
+>🧠 Output:
+>
+>(28, 28)
+
+**The image is 28 pixels wide and 28 pixels tall. It's a 2D array representing grayscale pixel intensities.**
+
+plt.matshow(x_train[0]) **-You're visualizing the first image in the MNIST training set using Matplotlib's matshow, which displays a 2D array as a matrix with color mapping.**
+
+
+y_train[:5]  Shows you the first five labels in the MNIST training set.
+
+>array([5, 0, 4, 1, 9], dtype=uint8)
+
+
+x_train=x_train/255
+x_test=x_test/255 MNIST 
+
+**MNIST images have pixel values from 0 to 255.**
+
+**Dividing by 255 scales them to the [0, 1] range.**
+
+**This helps neural networks converge faster and perform better, since gradients behave more predictably.**
+
+
+
+plt.matshow(x_train[1]) **Visualizing the second image in the MNIST training set.**
+
+
+x_train.shape **60000 images that has 28x28 pixels size.**
+(60000, 28, 28)
+
+
+
+     
