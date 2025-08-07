@@ -98,6 +98,33 @@ from sklearn.model_selection import train_test_split
 
 x_train,x_test,y_train,y_test=train_test_split(x,y,train_size=0.75,random_state=43)
 
+**Splits your dataset into training and testing sets.**
+
+**y: Target labels (anemia types)**
+
+**x: Features**
+
+**train_size=0.75: 75% of the data goes to training, 25% to testing**
+
+**random_state=43: Ensures reproducibility — the same split every time you run it.**
+
+**x_train, y_train: Used to train your model.**
+
+**x_test, y_test: Used to evaluate model performance**
+
+from tensorflow.keras.models import Sequential **Initializes a Keras Sequential model, which is a linear stack of layers — perfect for building feedforward neural networks.**
+
+model=Sequential() **Sequential(): Creates an empty model where you’ll add layers one by one.**
+
+
+x.columns **This will return a list of all the column names from your original DataFrame, excluding "Diagnosis" since you dropped it earlier.**
+
+
+len(x.columns)  📊 Returns the number of columns.
+
+from tensorflow.keras.layers import Dense
+
+
 
 
 
