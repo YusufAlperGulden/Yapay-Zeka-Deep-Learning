@@ -122,7 +122,26 @@ x.columns **This will return a list of all the column names from your original D
 
 len(x.columns)  📊 Returns the number of columns.
 
-from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dense **Imports the Dense layer from Keras, which is a fully connected neural network layer (essential for building Sequential model.)**
+
+**Each neuron in a Dense layer receives input from every neuron in the previous layer.**
+
+model.add(Dense(64,activation='relu',input_dim=len(x.columns))) **Adding the first hidden layer to neural network.**
+
+>64 units: Number of neurons
+>
+>activation: Activation function (e.g., 'relu')
+>
+>input_dim: Shape of input data. It tells Keras how many features to expect in each input sample.
+
+***The first Dense layer processes that input and applies weights, biases, and an activation function (like 'relu').***
+
+**This first layer will learn patterns from the data to help distinguish between anemia types.**
+
+model.add(Dense(32, activation='relu')) 
+
+
+
 
 
 
