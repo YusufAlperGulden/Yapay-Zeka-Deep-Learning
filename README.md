@@ -326,8 +326,22 @@ model.fit(x_train_flatten,y_train,epochs=5)
 
 model.evaluate(x_test_flatten,y_test)
 
+**Measuring how well your trained model performs on unseen test data.**
+
+**Loss: How far off the predictions are from the true labels.**
+
+**Accuracy: Percentage of correct predictions.**
+
 
 ---------------------------------------------
+
+plt.matshow(x_test[4]) **visualizing the fifth image in the MNIST test set.**
+
+-----------------------------------------------
+
+y_predicted=model.predict(x_test_flatten)
+
+------------------------------------------------
 
 # YUSUF ALPER GÜLDEN 07.08.2025
 
