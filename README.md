@@ -284,10 +284,50 @@ Your new shape becomes:
 --------------------------------------------------
 
 model=keras.Sequential([keras.layers.Dense(10,input_shape=(784,),activation='sigmoid')])
-     
 
+**Creating a single-layer neural network for digit classification.**
+
+**Input layer: Accepts 784 features (flattened 28×28 image)**
+
+**Dense layer: Outputs 10 values (one for each digit 0–9)**
+
+**Activation: sigmoid squashes each output between 0 and 1**
 
 --------------------------------
+
+model.compile(optimizer="adam",loss="sparse_categorical_crossentropy",metrics=['accuracy'])
+
+
+Optimizer: "adam"   **Adapts learning rates during training.**
+
+Loss: "sparse_categorical_crossentropy" **Ideal when your labels (y_train) are integers (not one-hot encoded)**
+
+Metrics: ["accuracy"]  **Tracks how often predictions match labels.**
+
+-----------------------------------------------------------------------
+
+model.fit(x_train_flatten,y_train,epochs=5)
+
+**Training neural network for 5 full passes over the MNIST training data.**
+
+>Each image is fed through the model.
+>
+>The model predicts a digit.(0–9)
+>
+>The loss function compares predictions to actual labels.
+>
+>The optimizer (adam) updates weights to reduce error.
+>
+>Accuracy improves over time as the model learns patterns.
+
+
+---------------------------------------------------------
+
+
+model.evaluate(x_test_flatten,y_test)
+
+
+---------------------------------------------
 
 # YUSUF ALPER GÜLDEN 07.08.2025
 
