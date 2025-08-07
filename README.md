@@ -264,6 +264,28 @@ plt.matshow(x_train[1]) **Visualizing the second image in the MNIST training set
 x_train.shape **60000 images that has 28x28 pixels size.**
 (60000, 28, 28)
 
+x_train_flatten=x_train.reshape(len(x_train),28*28)
+x_test_flatten=x_test.reshape(len(x_test),28*28)
+
+**Flattens each 28×28 image into a 784-dimensional vector. This is essential when feeding data into models that expect flat input, like a simple dense neural network.**
+
+
+**Neural networks like Dense(10, activation='relu') expect 1D input.**
+
+**Flattening converts each image from shape (28, 28) to (784,)**
+
+Your new shape becomes:
+
+>x_train_flatten.shape → (60000, 784)
+>
+>x_test_flatten.shape → (10000, 784)
+
+
+--------------------------------------------------
+
+model=keras.Sequential([keras.layers.Dense(10,input_shape=(784,),activation='sigmoid')])
+     
+
 
 --------------------------------
 
